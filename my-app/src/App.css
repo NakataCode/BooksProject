@@ -1,0 +1,42 @@
+body {
+  background: linear-gradient(180deg, #00cc99, #6600ff);
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+img {
+  width: 17%;
+  border-radius: 5%;
+  transition: transform 0.9s;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+.containerOne {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+.containerTwo {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+.containerThree {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+
+.containerP {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
