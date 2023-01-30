@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(180deg, #00cc99, #6600ff);
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.img {
+  float: left;
+  border-radius: 3%;
+  width: 17%;
+  height: auto;
+  margin: 8%;
+  transition: transform 0.9s;
+  aspect-ratio: 2/3;
+}
+.img:hover {
+  transform: scale(1.1);
+}
