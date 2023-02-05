@@ -1,49 +1,112 @@
-import React from "react";
 import "./bookPageComponent.css";
+import booksInfo from "../api/booksInfo";
+import React, { useEffect, useState } from "react";
 
-function bookPageComponent() {
+interface NewComponentProps {
+  index: number;
+}
+
+const BookPageComponent1: React.FC<NewComponentProps> = () => {
+  //useState for the transfer of the JSON data:
+  const [info, setInfo] = useState([] as any[]);
+  //the next 3 "useState" are used for - 1. total pages of the book(which is already set, so the user knows how many pages is the book)
+  //2. The second useState is for the pages that have been read by the user
+  //3. The third useState is for if the book is available
+  const [totalPages, setTotalPages] = useState(512);
+
+  const [pagesRead, setPagesRead] = useState(
+    parseInt(localStorage.getItem("Component1 - pagesRead") || "0", 10)
+  );
+  const [isAvailable, setIsAvailable] = useState(
+    localStorage.getItem("Component1 - isAvailable") === "true"
+  );
+
+  //useEffect that is used for saving the user input, and if the book is available on the bookstore
+  useEffect(() => {
+    localStorage.setItem("Component1 - pagesRead", pagesRead.toString());
+    localStorage.setItem("Component1 - isAvailable", isAvailable.toString());
+  }, [pagesRead, isAvailable]);
+
+  //Calculating the percentage of the remaining pages
+  const calculatePercentage = () => {
+    const remainingPages = totalPages - pagesRead;
+    return ((remainingPages / totalPages) * 100).toFixed(2) + "%";
+  };
+
+  //handlePagesReadChange is used for the input where the user is entering how many pages he had read
+  //The user can delete, add and most importantly, cannot go over the pages that the book is set to!
+  const handlePagesReadChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newPagesRead =
+      e.target.value === "" ? 0 : parseInt(e.target.value, 10);
+    if (newPagesRead <= totalPages) {
+      setPagesRead(newPagesRead);
+    }
+  };
+
+  //Fetching data from the JSON file
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await booksInfo.get("http://localhost:3000/data/1");
+        setInfo([res.data]);
+        setTotalPages(res.data.pages);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <div className="containerSecond">
-        <img src="/images/sapiens.png" alt="Book"></img>
-        <div className="ContainerThird">
-          <h1>Sapiens</h1>
-          <h2>Yuval Noah Harari</h2>
-          <p className="discription">
-            100,000 years ago, at least six human species inhabited the earth.
-            Today there is just one. Us. Homo sapiens. How did our species
-            succeed in the battle for dominance? Why did our foraging ancestors
-            come together to create cities and kingdoms? How did we come to
-            believe in gods, nations and human rights; to trust money, books and
-            laws; and to be enslaved by bureaucracy, timetables and consumerism?
-            And what will our world be like in the millennia to come? In
-            Sapiens, Dr Yuval Noah Harari spans the whole of human history, from
-            the very first humans to walk the earth to the radical – and
-            sometimes devastating – breakthroughs of the Cognitive, Agricultural
-            and Scientific Revolutions. Drawing on insights from biology,
-            anthropology, paleontology and economics, he explores how the
-            currents of history have shaped our human societies, the animals and
-            plants around us, and even our personalities. Have we become happier
-            as history has unfolded? Can we ever free our behaviour from the
-            heritage of our ancestors? And what, if anything, can we do to
-            influence the course of the centuries to come? Bold, wide-ranging
-            and provocative, Sapiens challenges everything we thought we knew
-            about being human: our thoughts, our actions, our power ... and our
-            future
-          </p>
-        </div>
-      </div>
+      {info.map((obj, i) => {
+        return (
+          <div key={i} className="containerSecond">
+            <img src={obj.source} alt="i" />
+            <div>
+              <h1>{obj.title}</h1>
+              <h2>{obj.author}</h2>
+              <p>{obj.shortDesctiption}</p>
+            </div>
+          </div>
+        );
+      })}
       <div className="bottom">
         <div>
-          <input type="text"></input>
+          <div>
+            <label className="fontAndSize">Total pages: </label>
+            <input
+              type="number"
+              value={totalPages}
+              onChange={(e) => setTotalPages(parseInt(e.target.value, 10))}
+            />
+          </div>
+          <div>
+            <label className="fontAndSize">Pages read:</label>
+            <input
+              type="number"
+              value={pagesRead}
+              onChange={handlePagesReadChange}
+            />
+          </div>
+          <div>
+            <p>Remaining pages percentage: {calculatePercentage()}</p>
+          </div>
         </div>
         <div className="checkbox-wrapper-2">
-          <input type="checkbox" className="sc-gJwTLC ikxBAC" />
-          <span className="available">available</span>
+          <input
+            type="checkbox"
+            id="input"
+            className="sc-gJwTLC ikxBAC"
+            checked={isAvailable}
+            onChange={(e) => setIsAvailable(e.target.checked)}
+          />
+          <label className="fontAndSize">Available</label>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default bookPageComponent;
+export default BookPageComponent1;
