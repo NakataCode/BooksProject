@@ -12,7 +12,7 @@ const BookPageComponent3: React.FC<NewComponentProps> = () => {
   //the next 3 "useState" are used for - 1. total pages of the book(which is already set, so the user knows how many pages is the book)
   //2. The second useState is for the pages that have been read by the user
   //3. The third useState is for if the book is available
-  const [totalPages, setTotalPages] = useState(512);
+  const [totalPages, setTotalPages] = useState(0);
 
   const [pagesRead, setPagesRead] = useState(
     parseInt(localStorage.getItem("Component3 - pagesRead") || "0", 10)
@@ -50,6 +50,7 @@ const BookPageComponent3: React.FC<NewComponentProps> = () => {
         const res = await booksInfo.get("http://localhost:3000/data/3");
         setInfo([res.data]);
         setTotalPages(res.data.pages);
+        setIsAvailable(res.data.isOwned);
       } catch (e) {
         console.log(e);
       }
@@ -62,47 +63,51 @@ const BookPageComponent3: React.FC<NewComponentProps> = () => {
     <div>
       {info.map((obj, i) => {
         return (
-          <div key={i} className="containerSecond">
+          <div key={i} className="containerSecond containerSecond-transformed">
             <img src={obj.source} alt="i" />
-            <div>
+            <div className="containerSecond-transformed">
               <h1>{obj.title}</h1>
               <h2>{obj.author}</h2>
-              <p>{obj.shortDesctiption}</p>
+              <p className="description-transformed">{obj.shortDesctiption}</p>
             </div>
           </div>
         );
       })}
-      <div className="bottom">
-        <div>
-          <div>
-            <label className="fontAndSize">Total pages: </label>
-            <input
-              type="number"
-              value={totalPages}
-              onChange={(e) => setTotalPages(parseInt(e.target.value, 10))}
-            />
-          </div>
-          <div>
-            <label className="fontAndSize">Pages read:</label>
-            <input
-              type="number"
-              value={pagesRead}
-              onChange={handlePagesReadChange}
-            />
-          </div>
+      <div className="bottom containerSecond-transformed">
+        <div className="input-container">
+          <label className="fontAndSize">Total pages: </label>
+          <input
+            className="notAllowed"
+            type="number"
+            value={totalPages}
+            onChange={(e) => setTotalPages(parseInt(e.target.value, 10))}
+          />
+        </div>
+        <div className="input-container">
+          <label className="fontAndSize">Pages read:</label>
+          <input
+            type="number"
+            value={pagesRead}
+            onChange={handlePagesReadChange}
+          />
           <div>
             <p>Remaining pages percentage: {calculatePercentage()}</p>
           </div>
         </div>
-        <div className="checkbox-wrapper-2">
+        <div className="checkbox-styles">
           <input
             type="checkbox"
-            id="input"
-            className="sc-gJwTLC ikxBAC"
+            id="cb5"
+            className="checkbox checkbox-flip"
             checked={isAvailable}
             onChange={(e) => setIsAvailable(e.target.checked)}
           />
-          <label className="fontAndSize">Available</label>
+          <label
+            data-tg-off="Not available"
+            data-tg-on="Available"
+            htmlFor="cb5"
+            className="change"
+          ></label>
         </div>
       </div>
     </div>

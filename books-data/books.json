@@ -8,7 +8,7 @@
       "pages": 512,
       "shortDesctiption": "100,000 years ago, at least six human species inhabited the earth. Today there is just one. Us. Homo sapiens. How did our species succeed in the battle for dominance? Why did our foraging ancestors come together to create cities and kingdoms? How did we come to believe in gods, nations and human rights; to trust money, books and laws; and to be enslaved by bureaucracy, timetables and consumerism? And what will our world be like in the millennia to come? In Sapiens, Dr Yuval Noah Harari spans the whole of human history, from the very first humans to walk the earth to the radical – and sometimes devastating – breakthroughs of the Cognitive, Agricultural and Scientific Revolutions. Drawing on insights from biology, anthropology, paleontology and economics, he explores how the currents of history have shaped our human societies, the animals and plants around us, and even our personalities. Have we become happier as history has unfolded? Can we ever free our behaviour from the heritage of our ancestors? And what, if anything, can we do to influence the course of the centuries to come? Bold, wide-ranging and provocative, Sapiens challenges everything we thought we knew about being human: our thoughts, our actions, our power ... and our future.",
       "progress": 0,
-      "isOwned": false,
+      "isOwned": true,
       "source": "/images/sapiens.png"
     },
     {
@@ -30,7 +30,7 @@
       "pages": 276,
       "shortDesctiption": "After decades of research, world-renowned Stanford University psychologist Carol S. Dweck, Ph.D., discovered a simple but groundbreaking idea: the power of mindset. In this brilliant book, she shows how success in school, work, sports, the arts, and almost every area of human endeavor can be dramatically influenced by how we think about our talents and abilities. People with a fixed mindset—those who believe that abilities are fixed—are less likely to flourish than those with a growth mindset—those who believe that abilities can be developed. Mindset reveals how great parents, teachers, managers, and athletes can put this idea to use to foster outstanding accomplishment. In this edition, Dweck offers new insights into her now famous and broadly embraced concept. She introduces a phenomenon she calls false growth mindset and guides people toward adopting a deeper, truer growth mindset. She also expands the mindset concept beyond the individual, applying it to the cultures of groups and organizations. With the right mindset, you can motivate those you lead, teach, and love—to transform their lives and your own.",
       "progress": 0,
-      "isOwned": false,
+      "isOwned": true,
       "source": "/images/mindset.png"
     },
     {
@@ -52,7 +52,7 @@
       "pages": 707,
       "shortDesctiption": "The latest groundbreaking tome from Tim Ferriss, the #1 New York Times best-selling author of The 4-Hour Workweek. - This book contains the distilled tools, tactics, and ‘inside baseball’ you won’t find anywhere else. It also includes new tips from past guests, and life lessons from new ‘guests’ you haven’t met. Everything within these pages has been vetted, explored, and applied to my own life in some fashion. I’ve used dozens of the tactics and philosophies in high-stakes negotiations, high-risk environments, or large business dealings. The lessons have made me millions of dollars and saved me years of wasted effort and frustration. I created this book, my ultimate notebook of high-leverage tools, for myself. It’s changed my life, and I hope the same for you.",
       "progress": 0,
-      "isOwned": false,
+      "isOwned": true,
       "source": "/images/toolsoftitans.png"
     },
     {
@@ -74,7 +74,7 @@
       "pages": 240,
       "shortDesctiption": "he ultimate guide to human-centered design. The Design of Everyday Things shows that good, usable design is possible. The rules are simple: make things visible, exploit natural relationships that couple function and control, and make intelligent use of constraints. The goal: guide the user effortlessly to the right action on the right control at the right time. The Design of Everyday Things is a powerful primer on how -- and why -- some products satisfy customers while others only frustrate them.",
       "progress": 0,
-      "isOwned": false,
+      "isOwned": true,
       "source": "/images/designofeveryday.png"
     }
   ]

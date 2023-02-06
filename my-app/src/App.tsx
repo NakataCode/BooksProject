@@ -37,8 +37,11 @@ const App: React.FC = () => {
       case 0:
         return (
           <div>
-            <div className="fontAndSize" onClick={() => setShowComponent(null)}>
-              Go back
+            <div
+              className="fontAndSize-back"
+              onClick={() => setShowComponent(null)}
+            >
+              Home
             </div>
             <BookPageComponent1 index={showComponent} />
           </div>
@@ -46,8 +49,11 @@ const App: React.FC = () => {
       case 1:
         return (
           <div>
-            <div className="fontAndSize" onClick={() => setShowComponent(null)}>
-              Go back
+            <div
+              className="fontAndSize-back"
+              onClick={() => setShowComponent(null)}
+            >
+              Home
             </div>
             <BookPageComponent2 index={showComponent} />
           </div>
@@ -55,8 +61,11 @@ const App: React.FC = () => {
       case 2:
         return (
           <div>
-            <div className="fontAndSize" onClick={() => setShowComponent(null)}>
-              Go back
+            <div
+              className="fontAndSize-back"
+              onClick={() => setShowComponent(null)}
+            >
+              Home
             </div>
             <BookPageComponent3 index={showComponent} />
           </div>
@@ -64,8 +73,11 @@ const App: React.FC = () => {
       case 3:
         return (
           <div>
-            <div className="fontAndSize" onClick={() => setShowComponent(null)}>
-              Go back
+            <div
+              className="fontAndSize-back"
+              onClick={() => setShowComponent(null)}
+            >
+              Home
             </div>
             <BookPageComponent4 index={showComponent} />
           </div>
@@ -73,8 +85,11 @@ const App: React.FC = () => {
       case 4:
         return (
           <div>
-            <div className="fontAndSize" onClick={() => setShowComponent(null)}>
-              Go back
+            <div
+              className="fontAndSize-back"
+              onClick={() => setShowComponent(null)}
+            >
+              Home
             </div>
             <BookPageComponent5 index={showComponent} />
           </div>
@@ -82,8 +97,11 @@ const App: React.FC = () => {
       case 5:
         return (
           <div>
-            <div className="fontAndSize" onClick={() => setShowComponent(null)}>
-              Go back
+            <div
+              className="fontAndSize-back"
+              onClick={() => setShowComponent(null)}
+            >
+              Home
             </div>
             <BookPageComponent6 index={showComponent} />
           </div>
@@ -91,8 +109,11 @@ const App: React.FC = () => {
       case 6:
         return (
           <div>
-            <div className="fontAndSize" onClick={() => setShowComponent(null)}>
-              Go back
+            <div
+              className="fontAndSize-back"
+              onClick={() => setShowComponent(null)}
+            >
+              Home
             </div>
             <BookPageComponent7 index={showComponent} />
           </div>

@@ -8,7 +8,7 @@ body {
 .img {
   float: left;
   border-radius: 3%;
-  width: 17%;
+  width: 15rem;
   height: auto;
   margin: 8%;
   transition: transform 0.9s;
@@ -17,7 +17,30 @@ body {
 .img:hover {
   transform: scale(1.1);
 }
-.fontAndSize {
-  color: white;
+
+.fontAndSize-back {
   font-family: "Titillium Web", sans-serif;
+  padding: 0.2em 0.5em;
+  width: 5rem;
+  background: linear-gradient(360deg, #00cc99, #6600ff);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  margin: 0.6em 0.6em;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.4s, padding 1s;
+}
+.fontAndSize-back:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 800px) {
+  .fontAndSize-back {
+    padding: 0.5em 2em;
+    font-size: 1em;
+  }
 }
