@@ -1,9 +1,10 @@
 body {
-  background: linear-gradient(360deg, #00cc99, #6600ff);
-  /* width: 100%; */
+  background-image: url("../images-for-components/circle-scatter-haikei.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 100vh;
   background-attachment: fixed;
-  /* font-family: "Nerko One", cursive; */
   font-family: "Titillium Web", sans-serif;
 }
 
