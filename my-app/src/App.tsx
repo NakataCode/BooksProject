@@ -124,10 +124,10 @@ const App: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       {info.map((obj, index) => {
         return (
-          <div key={index} className="firstDiv">
+          <div key={index}>
             <img
               onClick={() => handleClick(index)}
               className="img"

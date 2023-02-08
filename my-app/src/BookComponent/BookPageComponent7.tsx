@@ -64,8 +64,10 @@ const BookPageComponent7: React.FC<NewComponentProps> = () => {
       {info.map((obj, i) => {
         return (
           <div key={i} className="containerSecond containerSecond-transformed">
-            <img src={obj.source} alt="i" />
-            <div className="containerSecond-transformed">
+            <div>
+              <img src={obj.source} alt="i" />
+            </div>
+            <div className="InfoContainer containerSecond-transformed">
               <h1>{obj.title}</h1>
               <h2>{obj.author}</h2>
               <p className="description-transformed">{obj.shortDesctiption}</p>
@@ -94,7 +96,7 @@ const BookPageComponent7: React.FC<NewComponentProps> = () => {
             <p>Remaining pages percentage: {calculatePercentage()}</p>
           </div>
         </div>
-        <div className="checkbox-styles">
+        <div className="available checkbox-styles">
           <input
             type="checkbox"
             id="cb5"
@@ -106,7 +108,7 @@ const BookPageComponent7: React.FC<NewComponentProps> = () => {
             data-tg-off="Not available"
             data-tg-on="Available"
             htmlFor="cb5"
-            className="change"
+            className="change notAllowed"
           ></label>
         </div>
       </div>

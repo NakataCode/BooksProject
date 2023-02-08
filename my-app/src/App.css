@@ -4,13 +4,19 @@ body {
   height: 100vh;
   background-attachment: fixed;
 }
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 .img {
-  float: left;
   border-radius: 3%;
   width: 15rem;
   height: auto;
-  margin: 8%;
+  margin: 4em;
   transition: transform 0.9s;
   aspect-ratio: 2/3;
 }
@@ -40,7 +46,18 @@ body {
 
 @media only screen and (max-width: 800px) {
   .fontAndSize-back {
-    padding: 0.5em 2em;
+    padding: 0.4em 1.5em;
     font-size: 1em;
+  }
+}
+@media only screen and (max-width: 735px) {
+  .img {
+    width: 11rem;
+  }
+}
+
+@media only screen and (max-width: 607px) {
+  .img {
+    width: 15rem;
   }
 }
