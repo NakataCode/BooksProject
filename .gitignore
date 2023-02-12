@@ -1,2 +1,3 @@
+# add all files that should be ignored
 books-data/node_modules
 my-app/node_modules
