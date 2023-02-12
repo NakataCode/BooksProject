@@ -1,6 +1,7 @@
-import "./bookPageComponent.css";
+import "../App.css";
 import booksInfo from "../api/booksInfo";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface NewComponentProps {
   index: number;
@@ -61,11 +62,16 @@ const BookPageComponent7: React.FC<NewComponentProps> = () => {
 
   return (
     <div>
+      <div>
+        <Link className="removeDec" to="/">
+          <button className="fontAndSize-back">Home</button>
+        </Link>
+      </div>
       {info.map((obj, i) => {
         return (
           <div key={i} className="containerSecond containerSecond-transformed">
             <div>
-              <img src={obj.source} alt="i" />
+              <img className="componentImg" src={obj.source} alt="i" />
             </div>
             <div className="InfoContainer containerSecond-transformed">
               <h1>{obj.title}</h1>
