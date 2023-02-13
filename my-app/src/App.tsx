@@ -16,17 +16,23 @@ import BookPageComponent5 from "./BookComponent/BookPageComponent5";
 import BookPageComponent6 from "./BookComponent/BookPageComponent6";
 import BookPageComponent7 from "./BookComponent/BookPageComponent7";
 
+const bookComponents = [
+  BookPageComponent1,
+  BookPageComponent2,
+  BookPageComponent3,
+  BookPageComponent4,
+  BookPageComponent5,
+  BookPageComponent6,
+  BookPageComponent7,
+];
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route index element={<Home />} />
-      <Route path="book/1" element={<BookPageComponent1 index={0} />} />
-      <Route path="book/2" element={<BookPageComponent2 index={1} />} />
-      <Route path="book/3" element={<BookPageComponent3 index={2} />} />
-      <Route path="book/4" element={<BookPageComponent4 index={3} />} />
-      <Route path="book/5" element={<BookPageComponent5 index={4} />} />
-      <Route path="book/6" element={<BookPageComponent6 index={5} />} />
-      <Route path="book/7" element={<BookPageComponent7 index={6} />} />
+      {bookComponents.map((Component, index) => (
+        <Route key={index} path={`book/${index + 1}`} element={<Component />} />
+      ))}
     </Route>
   )
 );

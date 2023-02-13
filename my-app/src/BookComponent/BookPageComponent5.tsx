@@ -3,11 +3,7 @@ import booksInfo from "../api/booksInfo";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-interface NewComponentProps {
-  index: number;
-}
-
-const BookPageComponent5: React.FC<NewComponentProps> = () => {
+const BookPageComponent5: React.FC = () => {
   //useState for the transfer of the JSON data:
   const [info, setInfo] = useState([] as any[]);
   //the next 3 "useState" are used for - 1. total pages of the book(which is already set, so the user knows how many pages is the book)
