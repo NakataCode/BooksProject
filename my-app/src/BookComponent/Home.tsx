@@ -2,7 +2,6 @@ import "../App.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-//API link
 import booksInfo from "../api/booksInfo";
 
 const Home: React.FC = () => {
@@ -23,15 +22,13 @@ const Home: React.FC = () => {
 
   return (
     <div className="container">
-      {info.map((obj, index) => {
-        return (
-          <div key={index} className="firstDiv">
-            <Link to={`/book/${index + 1}`}>
-              <img className="img" src={obj.source} alt="book" />
-            </Link>
-          </div>
-        );
-      })}
+      {info.map((obj) => (
+        <div key={obj.id} className="firstDiv">
+          <Link to={`/book/${obj.id}`}>
+            <img className="img" src={obj.source} alt={obj.title} />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };
