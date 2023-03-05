@@ -1,0 +1,243 @@
+body {
+  background-image: url("./images-for-components/circle-scatter-haikei.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/*Styles for every book component:*/
+.componentImg {
+  width: 17rem;
+  border-radius: 3%;
+  margin-top: 40px;
+}
+
+h1 {
+  font-weight: 800;
+}
+h2 {
+  font-weight: 700;
+}
+p {
+  font-weight: 600;
+  color: white;
+}
+.fontAndSize {
+  font-weight: 600;
+  color: white;
+}
+
+.notAllowed {
+  pointer-events: none;
+}
+.containerSecond {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  margin-bottom: 50px;
+}
+/*Button styles*/
+
+.fontAndSize-back {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  width: 6rem;
+  border: 2px solid #a7233a;
+  border-radius: 0.6em;
+  color: #a7233a;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0.6em 0.5em;
+  padding: 0.5em 1.6em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+}
+.fontAndSize-back {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.fontAndSize-back:hover {
+  box-shadow: 0 0 40px 40px #a7233a inset;
+  color: white;
+}
+.removeDec {
+  text-decoration: none;
+}
+
+/*Input box - pages read, total pages*/
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3em;
+}
+
+.fontAndSize {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.available {
+  margin-top: 2.3em;
+}
+.InfoContainer {
+  width: 60%;
+}
+
+input[type="number"] {
+  padding: 0.5em;
+  font-size: 1em;
+  width: 10em;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*Checkbox - available*/
+
+.checkbox-styles .checkbox {
+  display: none;
+}
+.checkbox-styles .checkbox,
+.checkbox-styles .checkbox:after,
+.checkbox-styles .checkbox:before,
+.checkbox-styles .checkbox *,
+.checkbox-styles .checkbox *:after,
+.checkbox-styles .checkbox *:before,
+.checkbox-styles .checkbox + .change {
+  box-sizing: border-box;
+}
+.checkbox-styles .checkbox::-moz-selection,
+.checkbox-styles .checkbox:after::-moz-selection,
+.checkbox-styles .checkbox:before::-moz-selection,
+.checkbox-styles .checkbox *::-moz-selection,
+.checkbox-styles .checkbox *:after::-moz-selection,
+.checkbox-styles .checkbox *:before::-moz-selection,
+.checkbox-styles .checkbox + .change::-moz-selection,
+.checkbox-styles .checkbox::selection,
+.checkbox-styles .checkbox:after::selection,
+.checkbox-styles .checkbox:before::selection,
+.checkbox-styles .checkbox *::selection,
+.checkbox-styles .checkbox *:after::selection,
+.checkbox-styles .checkbox *:before::selection,
+.checkbox-styles .checkbox + .change::selection {
+  background: none;
+}
+.checkbox-styles .checkbox + .change {
+  outline: 0;
+  display: block;
+  width: 10em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox-styles .checkbox + .change:after,
+.checkbox-styles .checkbox + .change:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.checkbox-styles .checkbox + .change:after {
+  left: 0;
+}
+.checkbox-styles .checkbox + .change:before {
+  display: none;
+}
+.checkbox-styles .checkbox:checked + .change:after {
+  left: 50%;
+}
+
+.checkbox-styles .checkbox-flip + .change {
+  padding: 2px;
+  transition: all 0.2s ease;
+  font-family: sans-serif;
+  perspective: 100px;
+}
+.checkbox-styles .checkbox-flip + .change:after,
+.checkbox-styles .checkbox-flip + .change:before {
+  display: inline-block;
+  transition: all 0.4s ease;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  line-height: 2em;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+.checkbox-styles .checkbox-flip + .change:after {
+  content: attr(data-tg-on);
+  background: #02c66f;
+  transform: rotateY(-180deg);
+}
+.checkbox-styles .checkbox-flip + .change:before {
+  background: #ff3a19;
+  content: attr(data-tg-off);
+}
+.checkbox-styles .checkbox-flip + .change:active:before {
+  transform: rotateY(-20deg);
+}
+.checkbox-styles .checkbox-flip:checked + .change:before {
+  transform: rotateY(180deg);
+}
+.checkbox-styles .checkbox-flip:checked + .change:after {
+  transform: rotateY(0);
+  left: 0;
+  background: #7fc6a6;
+}
+.checkbox-styles .checkbox-flip:checked + .change:active:after {
+  transform: rotateY(20deg);
+}
+
+@media only screen and (max-width: 950px) {
+  .containerSecond-transformed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.8em;
+  }
+  .InfoContainer {
+    width: 95%;
+  }
+
+  .description-transformed {
+    margin: 0.3em 2em;
+  }
+  .available {
+    margin-top: 0.2em;
+    margin-bottom: 2em;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .componentImg {
+    width: 20rem;
+  }
+}

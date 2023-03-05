@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Book } from "./interface";
 import BookComponent from "./BookComponent";
-
 interface BookItemComponentProps {
   id?: number | undefined;
 }
@@ -16,6 +15,10 @@ const BookItemComponent = (props: BookItemComponentProps) => {
   const [book, setBook] = useState<Book | null>(null);
   const [totalPages, setTotalPages] = useState(0);
   const [pagesRead, setPagesRead] = useState(0);
+
+  if (!Number.isInteger(Number(realId))) {
+    throw new Error("Invalid book ID");
+  }
 
   useEffect(() => {
     booksInfo

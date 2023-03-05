@@ -1,6 +1,6 @@
 import "../App.css";
 import { Book } from "./interface";
-
+import "../BookStyles.css";
 interface BookProps {
   book: Book;
   setTotalPages: Function;
