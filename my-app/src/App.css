@@ -1,3 +1,15 @@
+body {
+  background-image: url("./images-for-components/circle-scatter-haikei.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/*Styles for Home component:*/
+
 .container {
   margin: 0 auto;
   display: flex;
@@ -16,38 +28,6 @@
 }
 .img:hover {
   transform: scale(1.1);
-}
-
-/*Button styles*/
-
-.fontAndSize-back {
-  box-sizing: border-box;
-  appearance: none;
-  background-color: transparent;
-  width: 6rem;
-  border: 2px solid #a7233a;
-  border-radius: 0.6em;
-  color: #a7233a;
-  cursor: pointer;
-  display: flex;
-  align-self: center;
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0.6em 0.5em;
-  padding: 0.5em 1.6em;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Titillium Web", sans-serif;
-  font-weight: 600;
-}
-.fontAndSize-back {
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-}
-.fontAndSize-back:hover {
-  box-shadow: 0 0 40px 40px #a7233a inset;
-  color: white;
 }
 
 /*Responsive settings for the img:*/
